@@ -1,10 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 // Connection URL
-const url = "mongodb://localhost:27017";
+const url = "mongodb://mongoadmin:secret@localhost:27017/TodoApp?authSource=admin&readPreference=primary&ssl=false";
 const client = new MongoClient(url);
 
-// Database Name
-const dbName = "TodoApp";
-
-module.exports = { connection: client.connect(), DB_NAME: dbName };
+module.exports = { connection: client.connect() };
